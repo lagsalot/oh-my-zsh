@@ -15,7 +15,7 @@ function show_rvm {
     [ -f ~/.rvm ] && "rvm-prompt" || echo "%{$FG[169]%}no-rvm%{$reset_color%}"
 }
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$FG[173]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="branch: %{$FG[173]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$FG[197]%} ●●●%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$FG[040]%} ●●●%{$reset_color%}"
@@ -34,7 +34,7 @@ ZSH_THEME_GIT_PROMPT_DIVERGED=' diverged '
 ZSH_THEME_GIT_PROMPT_AHEAD_REMOTE='R- '
 ZSH_THEME_GIT_PROMPT_BEHIND_REMOTE='R+ '
 
-local git_info='branch: $(git_prompt_info) $(git_prompt_status) $(git_remote_status)'
+local git_info='$(git_prompt_info) $(git_prompt_status) $(git_remote_status)'
 local username='%{$FG[040]%}%n%{$reset_color%}'
 local hostname='%{$FG[033]%}%M%{$reset_color%}'
 local arrow='%{$FG[060]%}➞%{$reset_color%}'
