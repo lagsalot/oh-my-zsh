@@ -12,7 +12,7 @@
 # Also borrowing from http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/
 
 function show_rvm {
-    [ -f ~/.rvm ] && "rvm-prompt" || echo "%{$FG[169]%}no-rvm%{$reset_color%}"
+    [ -e ~/.rvm ] && "rvm-prompt" || echo "%{$FG[169]%}no-rvm%{$reset_color%}"
 }
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$FG[173]%}"
@@ -40,7 +40,7 @@ local username='%{$FG[040]%}%n%{$reset_color%}'
 local hostname='%{$FG[033]%}%M%{$reset_color%}'
 local arrow='%{$FG[060]%}➞%{$reset_color%}'
 local dir='$FG[069]% %3~%{$reset_color%}'
-local rvminfo='%{$FG[243]%}$(show_rvm)%{$reset_color%}'
+local rvminfo='%{$FG[103]%}$(show_rvm)%{$reset_color%}'
 
 PROMPT="[ ${username}@${hostname} - ${rvminfo} ]
 [ in ${dir}${git_info} ] "
