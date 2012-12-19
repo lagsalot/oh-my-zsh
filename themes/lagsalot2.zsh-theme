@@ -5,7 +5,7 @@ function show_rvm {
     [ -e ~/.rvm ] && "rvm-prompt" || echo "%{$FG[169]%}no-rvm%{$reset_color%}"
 }
 
-ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$FG[173]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX=" on %{$FG[117]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$FG[197]%} ●%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$FG[040]%} ●%{$reset_color%}"
@@ -28,8 +28,12 @@ local git_info='$(git_prompt_info)$(git_prompt_status)$(git_remote_status)'
 local username='%{$FG[040]%}%n%{$reset_color%}'
 local hostname='%{$FG[033]%}%M%{$reset_color%}'
 local arrow='%{$FG[060]%}➞%{$reset_color%}'
-local dir='$FG[069]% %3~%{$reset_color%}'
+local dir='$FG[096]% %3~%{$reset_color%}'
 local rvminfo='%{$FG[103]%}$(show_rvm)%{$reset_color%}'
+local lbracket='%{$FG[232]%}[%{$reset_color%}'
+local rbracket='%{$FG[232]%}]%{$reset_color%}'
+local at='%{$FG[232]%}@%{$reset_color%}'
+local dash='%{$FG[232]%}-%{$reset_color%}'
 
-PROMPT="[ ${username}@${hostname} - ${rvminfo} ]
-[ in ${dir}${git_info} ] "
+PROMPT="${lbracket} ${username} ${at} ${hostname} ${rvminfo} ${rbracket}
+${lbracket} in ${dir}${git_info} ${rbracket} "
